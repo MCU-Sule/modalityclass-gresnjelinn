@@ -1,0 +1,53 @@
+Nama : Grace Angelina Gunawan
+NRP  : 2072028
+
+Question to ask : 
+
+- how to prevent null from closing window
+Ini dapat terjadi jika popup blocker tidak mengizinkan windows untuk terbuka
+Non aktifkan pop up blocker untuk menghindari hal ini terjadi
+Dan juga pastikan nilai yang dikembalikan tidak null
+
+- how to know if a modal succeed or fail
+Dikatakan sukses jika dapat berfungsi sebagaimana mestinya
+Yaitu jika pada saat dibuka ataupun ditutup tidak muncul masalah
+Dan juga dapat diakses sesuai dengan pengaturannya, misalkan pada saat window A dibuka, maka window lain tidak dapat diakses
+
+- how do we sort listview by name
+Sudah disediakan suatu class yang bernama SortedList, class tersebut dapat mengurutkan suatu list secara otomatis
+Sama seperti Class-class lainnya, Class tersebut dipanggil dengan cara : 
+SortedList (nama variabel) = new SortedList();
+Di dalamnya juga diisikan parameter, yaitu list yang akan diurutkan sebagai parameter wajib, 
+dan juga bisa menambahkan Comparator secara opsional
+Atau bisa juga dengan SortedList (nama variabel) = (yang hendak diurutkan).sorted(),
+dengan parameter yang diisikan juga sama yaitu Comparator, di situ kita dapat .getName() untuk mengambil namanya
+
+- how do we sort listview by price
+Caranya kurang lebih sama juga dnegan mengurutkan berdasarkan nama, yaitu menggunakan Class SortedList
+Penggunaanya pun sama, yang membedakan adalah comparator yang dipasang sebagai parameter
+Namun, harga ini bisa diurutkan dengan beberapa hasil output yang berbeda
+Bisa kita urutkan berdasarkan harga asli yang ditetapkan sejak awal (yang belum didiskon)
+Atau bisa juga harga yang sudah dikenakan diskon, sehingga kita perlu menghitung terlebih dahulu harga setelah diskon tersebut sebelum melakukan sorting
+
+- how to show sub menu (context menu) on right click on list view
+Dengan menggunakan class Menu, sama seperti Class-class lainnya, Class tersebut dipanggil dengan cara : 
+Menu (nama variabel) = new Menu(); -> untuk parameter diisi dengan judul dari Menu
+Jika kita ingin menambahkan item, misalkan Delete, caranya adalah : 
+MenuItem delete = new MenuItem("Delete");
+
+- how to delete data from right click menu
+Siapkan sebuah button delete (Atau bisa juga delete ini diisikan pada menu)
+Beri onAction yang di dalamnya berisikan mengambil index baris yang sedang di select kemudian menghapusnya menggunakan .remove
+Beri mouse event onMouseClicked pada tabel menu (ini akan memilih suatu baris dalam tabel terlepas dari yang ditekan mouse kiri / kanan)
+Saat button diklik data akan hilang dari List dan juga akan langsung hilang dari tabel
+
+- if you want user to be able to order from menu what file needed to be modified / added?
+Kita dapat membuat sebuah window baru yang dikhususkan untuk user memesan sesuatu
+Jadi di window tersebut, akan muncul list view yang berisikan menu-menu apa saja yang user pesan
+Selain itu, kita juga dapat mempermudah user dengan menampilkan total belanjaan misalnya
+Untuk membuat window, diperlukan 1 file .fxml untuk viewnya dan 1 file Controller 
+Sebelum itu, di window menu, kita dapat menambahkan button untuk memesan, jadi caranya, user mengklik menu, kemudian klik button pesan
+Setelah itu, user akan diarahkan ke window order di mana pada saat window tersebut dibuka setidaknya sudah ada satu menu yang dipilih tersebut yang sudah tampil dalam listviewnya
+Kemudian jika user memesan kembali, tidak akan menambah stage baru, namun item dalam listviewnya akan bertambah (scene saja yang berubah)
+Untuk membuat hal tersebut, data perlu diambil dari menuList yang ditampilkan di listview pada window menu ke window order
+Data yang dipilih dapat diambil menggunakan getSelectionModel, baik langsung itemnya maupun indexnya
